@@ -150,17 +150,4 @@ Scripts/
   The `SaveSystem` uses `BinaryFormatter`. If needed, switch to JSON or another method for better security or compatibility.
 
 ---
-
-## 7. FUTURE IMPROVEMENTS
-
-- **Server Validation**  
-  For real-world scenarios, server checks prevent local clock manipulation and hacking attempts.
-
-- **In-App Purchases / Ads**  
-  Integrate actual rewarded ads or IAP to monetize coin purchases.
-
-- **Analytics & Telemetry**  
-  Track usage stats, spin outcomes, daily bonus claims, and more to refine the design.
-
----
 - Scripts by **Halil Mentes**, created for a technical demonstration.
