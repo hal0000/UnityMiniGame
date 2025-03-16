@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -56,7 +57,12 @@ public class MainMenu : BaseScene
     {
         if (_currencyManager.TryClaimDailyBonus())
         {
-            SetDailyBonusButtonAttributes(false);
+            if (_dailyBonusCoroutine != null)
+            {
+                StopCoroutine(_dailyBonusCoroutine);
+                _dailyBonusCoroutine = null;
+            }
+            _dailyBonusCoroutine = StartCoroutine(CheckDailyBonusAvailability());
         }
         else
         {
@@ -101,18 +107,18 @@ public class MainMenu : BaseScene
     
     private IEnumerator CheckDailyBonusAvailability()
     {
-        bool lastAvailability = TimerUtility.CanClaimDailyBonus(PlayerData.LastClaimTimestamp, PlayerData.LastVerifiedTimestamp);
-        SetDailyBonusButtonAttributes(lastAvailability);
-        while (true)
+        bool isAvailable = TimerUtility.CanClaimDailyBonus(PlayerData.LastClaimTimestamp, PlayerData.LastVerifiedTimestamp);
+        SetDailyBonusButtonAttributes(isAvailable);
+        if (isAvailable) yield break;
+        DateTime now = TimerUtility.CurrentTime;
+        DateTime todayClaimTime = new DateTime(now.Year, now.Month, now.Day, 13, 0, 0, DateTimeKind.Utc);
+        if (now >= todayClaimTime)
         {
-            bool currentAvailability = TimerUtility.CanClaimDailyBonus(PlayerData.LastClaimTimestamp, PlayerData.LastVerifiedTimestamp);
-            if (currentAvailability != lastAvailability)
-            {
-                SetDailyBonusButtonAttributes(currentAvailability);
-                lastAvailability = currentAvailability;
-            }
-            yield return new WaitForSeconds(1f);
+            todayClaimTime = todayClaimTime.AddDays(1);
         }
+        double waitTime = (todayClaimTime - now).TotalSeconds;
+        yield return new WaitForSeconds((float)waitTime + 10);//+10 for buffer just incase
+        SetDailyBonusButtonAttributes(true);
     }
 
     void SetDailyBonusButtonAttributes(bool value)
