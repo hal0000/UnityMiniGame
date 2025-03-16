@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class BaseScene : MonoBehaviour
 {
-    public SaveSystem.PlayerData PlayerData;
+    public PlayerModel PlayerData;
 
     public virtual void Awake()
     {
-        PlayerData = SaveSystem.Load();
+        PlayerData = ServiceLocator.Get<PlayerModel>();
     }
 
     public virtual void OnEnable()

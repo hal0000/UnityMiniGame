@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class CurrencyManager
 {
-    private SaveSystem.PlayerData _playerData;
+    private PlayerModel _playerData;
     public event Action<int> OnGoldUpdated;
     /// <summary>
     /// Constructor that takes the player data from the save system
     /// </summary>
     /// <param name="playerData"></param>
-    public CurrencyManager(SaveSystem.PlayerData playerData)
+    public CurrencyManager(PlayerModel playerData)
     {
         _playerData = playerData;
     }

@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d0ab4839-5b86-407f-b6f0-2094c3ea545e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityMiniGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityMiniGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CurrencyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CurrencyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimerUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimerUtility.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +77,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2880">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2880" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -93,7 +98,7 @@
       <updated>1741913128014</updated>
       <workItem from="1741913129456" duration="3000" />
       <workItem from="1742067248829" duration="1940000" />
-      <workItem from="1742158760137" duration="649000" />
+      <workItem from="1742158760137" duration="2497000" />
     </task>
     <servers />
   </component>
@@ -104,5 +109,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs</url>
+          <line>111</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" initialLine="111" containingFunctionPresentation="Method 'CheckDailyBonusAvailability'">
+            <startOffsets>
+              <option value="3333" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3376" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs</url>
+          <line>59</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" initialLine="59" containingFunctionPresentation="Method 'Action_ClaimFreeCoin'">
+            <startOffsets>
+              <option value="1677" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1705" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

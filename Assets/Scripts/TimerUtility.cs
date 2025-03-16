@@ -37,7 +37,7 @@ public static class TimerUtility
         // Allow the bonus claim only if the current time has reached or passed today's threshold.
         return CurrentTime >= todayClaimTime;
     }
-    public static void ClaimDailyBonus(SaveSystem.PlayerData playerData)
+    public static void ClaimDailyBonus(PlayerModel playerData)
     {
         // Update both the claim and verified timestamps to the current UTC time
         double currentTimestamp = ConvertDateTimeToTimestamp(CurrentTime);

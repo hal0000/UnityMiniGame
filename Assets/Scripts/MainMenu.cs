@@ -57,6 +57,7 @@ public class MainMenu : BaseScene
     {
         if (_currencyManager.TryClaimDailyBonus())
         {
+            SaveSystem.Save(PlayerData);
             if (_dailyBonusCoroutine != null)
             {
                 StopCoroutine(_dailyBonusCoroutine);
@@ -74,6 +75,9 @@ public class MainMenu : BaseScene
     {
         SaveSystem.DeleteSave();
         var playerData = SaveSystem.Load();
+        ServiceLocator.Unregister<PlayerModel>();
+        ServiceLocator.Register(playerData);
+    
         ServiceLocator.Unregister<CurrencyManager>();
         _currencyManager = new CurrencyManager(playerData);
         ServiceLocator.Register(_currencyManager);

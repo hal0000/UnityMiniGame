@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
         }
         ServiceLocator.Register(Instance);
         var playerData = SaveSystem.Load();
-        var currencyManager = new CurrencyManager(playerData);
+        ServiceLocator.Register(playerData);
+        var currencyManager = new CurrencyManager(ServiceLocator.Get<PlayerModel>());
         ServiceLocator.Register(currencyManager);
     }
 }
